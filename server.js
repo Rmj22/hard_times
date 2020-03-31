@@ -9,7 +9,7 @@ const app = express();
 
 app.use(logger("dev"));
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://budget:juanita1@ds061787.mlab.com:61787/heroku_1v765r2w"
+
 
 mongoose.connect(MONGODB_URI);
 
@@ -19,7 +19,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/budget", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://budget:juanita1@ds061787.mlab.com:61787/heroku_1v765r2w", {
   useNewUrlParser: true,
   useFindAndModify: false
 });

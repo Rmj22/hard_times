@@ -10,9 +10,6 @@ const app = express();
 app.use(logger("dev"));
 
 
-
-mongoose.connect(MONGODB_URI);
-
 app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
